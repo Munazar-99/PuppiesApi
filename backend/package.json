@@ -8,7 +8,6 @@
     "compile:watch": "npm run compile -- --watch *.ts",
     "test": "jest --watch --silent",
     "dev": "npx tsc -w & nodemon dist/server.js"
-
   },
   "repository": {
     "type": "git",
@@ -22,7 +21,8 @@
   },
   "homepage": "https://github.com/appliedtechnology/addons-ts-lab-puppiesApi#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "quicktype": "^16.0.35"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",

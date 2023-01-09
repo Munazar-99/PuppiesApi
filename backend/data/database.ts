@@ -1,4 +1,5 @@
-export const puppies = [
+import Model from '../model';
+export const puppies: Model[] = [
     {
         id: 1,
         breed:'papa johnes',
