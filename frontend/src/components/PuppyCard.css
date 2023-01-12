@@ -1,0 +1,39 @@
+.puppy-card {
+    user-select: none;
+    background-color: wheat;
+    display: grid;
+    grid-template-rows: 50% 10% 10% 10% 10% 10%;
+    row-gap: 0.4rem;
+    width: 15rem;
+    height: 20rem;
+    box-shadow: 0 0 15px 4px grey;
+    margin: 1rem;
+    border-radius: 25px;
+    overflow: hidden;
+
+}
+
+.puppy-image {
+    width: 100%;
+    height: 100%;
+}
+
+.description {
+    justify-self: center;
+}
+
+.buttons-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+}
+
+.utility-button {
+    width: 70%;
+    justify-self: center;
+    border-radius: 27%;
+}
+ .info-input {
+    width: 60%;
+    justify-self: center;
+    border-radius: 10%;
+ }

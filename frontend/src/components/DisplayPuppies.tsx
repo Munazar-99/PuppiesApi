@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Model from '../model'
 import './DisplayPuppies.css'
+import PuppyCard from './PuppyCard';
 
 function DisplayPuppies() {
     const [data, setData] = useState<Model[]>([]);
@@ -15,8 +16,11 @@ function DisplayPuppies() {
         if (typeof(searchedBreed.current?.value) === 'string') {
             const theValue = searchedBreed.current?.value
             setfilteredData(data?.filter(puppy => puppy.breed.toLowerCase().includes(theValue.toLowerCase())))
-        } 
-        console.log(filteredData)
+        }
+        if(searchedBreed.current?.value === '') {
+            filteredData.length = 0;
+        }
+        console.log(filteredData, searchedBreed.current?.value)
     }
     return (
         <main className='puppy-display'>
@@ -24,12 +28,7 @@ function DisplayPuppies() {
             <section className='puppy-section'>
                 {(filteredData.length < 1 ? data : filteredData)?.map((puppy) => {
                     return (
-                        <article className='puppy-card'>
-                            <img className='puppy-image' src={puppy.img} alt="" />
-                            <h5 className='description'>{puppy.name} {filteredData.length}</h5>
-                            <h5 className='description'>{puppy.breed}</h5>
-                            <h5 className='description'>{puppy.DOB}</h5>
-                        </article>
+                        <PuppyCard key={puppy.id} puppy={puppy} setData={setData} data={data}/>
                     )
                 })}
             </section>
